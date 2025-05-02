@@ -57,10 +57,28 @@ public class StackTugasMahasiswa24 {
     }
 
     public void print() {
-        for (int i = 0; i <= top; i++) {
+     if (top == -1) {
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan.");
+            return;
+    } else {
+        for (int i = top; i >= 0; i--) {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas );
         }
         System.out.println("");
+    }
       
+    }
+
+    public void peekBottom() {
+        if (!isEmpty()) {
+            System.out.println("Mahasiswa yang pertama mengumpulkan tugas adalah " + stack[0].nama);
+        } else {
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan.");
+        }
+        
+    }
+
+    public int getSize() {
+        return top + 1;
     }
 }

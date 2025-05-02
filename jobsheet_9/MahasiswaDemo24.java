@@ -12,6 +12,8 @@ public class MahasiswaDemo24 {
             System.out.println("2. Menilai Tugas");
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas");
+            System.out.println("5. Mahasiswa Yang Pertama Mengumpulkan Tugas");
+            System.out.println("6. Jumlah Tugas Yang Sudah Dikumpulkan");
             System.out.print("Pilih menu: ");
             pilih = input24.nextInt();
             input24.nextLine();
@@ -48,6 +50,12 @@ public class MahasiswaDemo24 {
                     System.out.println("Daftar semua tugas");
                     System.out.println("Nama\tNIM\tKelas");
                     stack.print();
+                    break;
+                case 5:
+                    stack.peekBottom();
+                    break;
+                case 6:
+                    System.out.println("Jumlah tugas yang sudah dikumpulkan: " + stack.getSize());
                     break;
                 default:
                     System.out.println("Pilihan tidak valid.");
