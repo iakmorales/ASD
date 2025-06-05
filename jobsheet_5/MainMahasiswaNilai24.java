@@ -7,6 +7,9 @@ public class MainMahasiswaNilai24 {
     
             MahasiswaNilai24 mahasiswa = new MahasiswaNilai24(uts, uas);
 
+            int nilaimax = mahasiswa.cariMaxBruteforce();
+            int nilaimin = mahasiswa.cariMinBruteforce();
+
             int nilaiTertinggi = mahasiswa.cariMaksimum(0, uts.length - 1);
             
             int nilaiTerendah = mahasiswa.cariMinimum(0, uts.length - 1);
@@ -14,6 +17,8 @@ public class MainMahasiswaNilai24 {
             double rataRataUAS = mahasiswa.hitungRataRata();
     
             System.out.println("===== HASIL PERHITUNGAN NILAI MAHASISWA =====");
+            System.out.println("Nilai UTS Tertinggi : " + nilaimax);
+            System.out.println("Nilai UTS Terendah  : " + nilaimin);
             System.out.println("Nilai UTS Tertinggi : " + nilaiTertinggi);
             System.out.println("Nilai UTS Terendah  : " + nilaiTerendah);
             System.out.println("Rata-rata Nilai UAS : " + rataRataUAS);

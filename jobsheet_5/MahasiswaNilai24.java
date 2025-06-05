@@ -9,20 +9,56 @@ public class MahasiswaNilai24 {
         nilaiUAS = uas;
     }
 
+    public int cariMaxBruteforce(){
+        int max = nilaiUTS[0];
+        for (int i = 1; i < nilaiUTS.length; i++) {
+            if (nilaiUTS[i] > max) {
+                max = nilaiUTS[i];
+            }
+        }
+        return max;
+    }
+
+    public int cariMinBruteforce(){
+        int min = nilaiUTS[0];
+        for (int i = 1; i < nilaiUTS.length; i++) {
+            if (nilaiUTS[i] < min) {
+                min = nilaiUTS[i];
+            }
+        }
+        return min;
+    }
+
     public int cariMaksimum(int kiri, int kanan) {
-        if (kiri == kanan) return nilaiUTS[kiri]; 
+        if (kiri == kanan) {
+            return nilaiUTS[kiri];
+        }
+        
         int tengah = (kiri + kanan) / 2;
         int maxKiri = cariMaksimum(kiri, tengah);
         int maxKanan = cariMaksimum(tengah + 1, kanan);
-        return (maxKiri > maxKanan) ? maxKiri : maxKanan;
+        
+        if (maxKiri > maxKanan) {
+            return maxKiri;
+        } else {
+            return maxKanan;
+        }
     }
-
+    
     public int cariMinimum(int kiri, int kanan) {
-        if (kiri == kanan) return nilaiUTS[kiri]; 
+        if (kiri == kanan) {
+            return nilaiUTS[kiri];
+        }
+        
         int tengah = (kiri + kanan) / 2;
         int minKiri = cariMinimum(kiri, tengah);
         int minKanan = cariMinimum(tengah + 1, kanan);
-        return (minKiri < minKanan) ? minKiri : minKanan;
+        
+        if (minKiri < minKanan) {
+            return minKiri;
+        } else {
+            return minKanan;
+        }
     }
 
     public double hitungRataRata() {
